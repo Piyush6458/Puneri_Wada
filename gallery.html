@@ -28,11 +28,13 @@
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Devran Wada</a></li>
-                        <li><a href="project.html">Our Old Project</a></li>
                         <li><a href="facilities.html">Facilities</a></li>
                         <li><a href="gallery.html" class="active">Gallery</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
+                    <a href="index.html" class="header-logo-img">
+                        <img src="images/logo.png" alt="Devran Wada Logo" loading="lazy">
+                    </a>
                 </div>
             </div>
         </nav>
@@ -44,126 +46,84 @@
         <img src="images/gallery-header.jpg" alt="Gallery">
         <div class="page-header-content">
             <div class="container">
-                <h1>Gallery</h1>
-                <p>Explore the Beauty of Devran Wada</p>
+               
             </div>
         </div>
     </section>
 
-    <!-- Gallery Filter -->
-    <section class="gallery-filter section">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="architecture">Architecture</button>
-                <button class="filter-btn" data-filter="courtyard">Courtyard</button>
-                <button class="filter-btn" data-filter="shoots">Shoots</button>
-                <button class="filter-btn" data-filter="surroundings">Surroundings</button>
-            </div>
-        </div>
-    </section>
+    <!-- Gallery Mosaic -->
+    <section class="gallery-main">
+        <div class="mosaic-grid">
 
-    <!-- Gallery Grid -->
-    <section class="gallery-main section">
-        <div class="container">
-            <div class="gallery-masonry">
-                <div class="gallery-item" data-category="architecture">
-                    <img src="images/gallery-arch-1.jpg" alt="Wooden Pillars">
-                    <div class="gallery-overlay">
-                        <span>Traditional Wooden Pillars</span>
-                    </div>
+            <!-- Row 1: one large left + two stacked right -->
+            <div class="mosaic-row">
+                <div class="mosaic-item mosaic-large">
+                    <img src="images/gallery-arch-1.jpg" alt="Heritage Architecture" loading="lazy">
                 </div>
-                <div class="gallery-item" data-category="courtyard">
-                    <img src="images/gallery-court-1.jpg" alt="Central Courtyard">
-                    <div class="gallery-overlay">
-                        <span>Central Chowk</span>
+                <div class="mosaic-stack">
+                    <div class="mosaic-item">
+                        <img src="images/gallery-1.jpg" alt="Devran Wada" loading="lazy">
                     </div>
-                </div>
-                <div class="gallery-item" data-category="shoots">
-                    <img src="images/gallery-shoot-1.jpg" alt="Pre-Wedding Shoot">
-                    <div class="gallery-overlay">
-                        <span>Pre-Wedding Photography</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="architecture">
-                    <img src="images/gallery-arch-2.jpg" alt="Carved Doors">
-                    <div class="gallery-overlay">
-                        <span>Intricately Carved Doors</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="surroundings">
-                    <img src="images/gallery-surr-1.jpg" alt="Rural Landscape">
-                    <div class="gallery-overlay">
-                        <span>Rural Surroundings</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="shoots">
-                    <img src="images/gallery-shoot-2.jpg" alt="Ad Shoot">
-                    <div class="gallery-overlay">
-                        <span>Advertisement Shoot</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="courtyard">
-                    <img src="images/gallery-court-2.jpg" alt="Courtyard View">
-                    <div class="gallery-overlay">
-                        <span>Courtyard from Above</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="architecture">
-                    <img src="images/gallery-arch-3.jpg" alt="Stone Walls">
-                    <div class="gallery-overlay">
-                        <span>Traditional Stone Walls</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="surroundings">
-                    <img src="images/gallery-surr-2.jpg" alt="Sinhagad View">
-                    <div class="gallery-overlay">
-                        <span>View of Sinhagad Fort</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="shoots">
-                    <img src="images/gallery-shoot-3.jpg" alt="Fashion Shoot">
-                    <div class="gallery-overlay">
-                        <span>Fashion Photography</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="architecture">
-                    <img src="images/gallery-arch-4.jpg" alt="Wooden Beams">
-                    <div class="gallery-overlay">
-                        <span>Traditional Wooden Beams</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="courtyard">
-                    <img src="images/gallery-court-3.jpg" alt="Evening Courtyard">
-                    <div class="gallery-overlay">
-                        <span>Evening Ambiance</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="surroundings">
-                    <img src="images/gallery-surr-3.jpg" alt="Farmland">
-                    <div class="gallery-overlay">
-                        <span>Surrounding Farmland</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="shoots">
-                    <img src="images/gallery-shoot-4.jpg" alt="Video Production">
-                    <div class="gallery-overlay">
-                        <span>Video Production</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="architecture">
-                    <img src="images/gallery-arch-5.jpg" alt="Entrance">
-                    <div class="gallery-overlay">
-                        <span>Traditional Entrance</span>
-                    </div>
-                </div>
-                <div class="gallery-item" data-category="courtyard">
-                    <img src="images/gallery-court-4.jpg" alt="Courtyard Details">
-                    <div class="gallery-overlay">
-                        <span>Architectural Details</span>
+                    <div class="mosaic-item">
+                        <img src="images/gallery-court-1.jpg" alt="Courtyard" loading="lazy">
                     </div>
                 </div>
             </div>
+
+            <!-- Row 2: three equal -->
+            <div class="mosaic-row">
+                <div class="mosaic-item">
+                    <img src="images/gallery-arch-2.jpg" alt="Carved Details" loading="lazy">
+                </div>
+                <div class="mosaic-item">
+                    <img src="images/gallery-2.jpg" alt="Wada View" loading="lazy">
+                </div>
+                <div class="mosaic-item">
+                    <img src="images/gallery-court-2.jpg" alt="Central Chowk" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Row 3: two stacked left + one large right -->
+            <div class="mosaic-row">
+                <div class="mosaic-stack">
+                    <div class="mosaic-item">
+                        <img src="images/gallery-3.jpg" alt="Traditional Space" loading="lazy">
+                    </div>
+                    <div class="mosaic-item">
+                        <img src="images/gallery-arch-3.jpg" alt="Stone Walls" loading="lazy">
+                    </div>
+                </div>
+                <div class="mosaic-item mosaic-large">
+                    <img src="images/gallery-4.jpg" alt="Heritage Property" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Row 4: four equal -->
+            <div class="mosaic-row">
+                <div class="mosaic-item">
+                    <img src="images/gallery-arch-4.jpg" alt="Wooden Beams" loading="lazy">
+                </div>
+                <div class="mosaic-item">
+                    <img src="images/gallery-court-3.jpg" alt="Evening Courtyard" loading="lazy">
+                </div>
+                <div class="mosaic-item">
+                    <img src="images/gallery-arch-5.jpg" alt="Traditional Entrance" loading="lazy">
+                </div>
+                <div class="mosaic-item mosaic-video">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/gallery-shoot-4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Row 5: one equal -->
+            <div class="mosaic-row">
+                <div class="mosaic-item">
+                    <img src="images/gallery-court-4.jpg" alt="Architectural Details" loading="lazy">
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -213,3 +173,6 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
+

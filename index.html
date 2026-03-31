@@ -28,11 +28,13 @@
                     <ul class="nav-menu" id="navMenu">
                         <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="about.html">About Devran Wada</a></li>
-                        <li><a href="project.html">Our Old Project</a></li>
                         <li><a href="facilities.html">Facilities</a></li>
                         <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
+                    <a href="index.html" class="header-logo-img">
+                        <img src="images/logo.png" alt="Devran Wada Logo" loading="lazy">
+                    </a>
                 </div>
             </div>
         </nav>
@@ -51,6 +53,12 @@
             </div>
             <div class="hero-slide">
                 <img src="images/hero-3.jpg" alt="Pre-wedding Shoot Location">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide hero-slide-video">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/gallery-shoot-4.mp4" type="video/mp4">
+                </video>
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -80,39 +88,85 @@
                     <a href="about.html" class="btn btn-secondary">Learn More</a>
                 </div>
                 <div class="welcome-image">
-                    <img src="images/wada-main.jpg" alt="Devran Wada Main Building">
+                    <img src="images/wada-main.jpg" alt="Devran Wada Main Building" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features section section-dark">
+    <!-- Testimonials Section -->
+    <section class="testimonials-video section section-dark">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose Devran Wada</h2>
+                <h2 class="section-title">Testimonials</h2>
                 <div class="title-divider"></div>
+                <p class="section-description">Hear from our happy clients</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📸</div>
-                    <h3>Perfect for Shoots</h3>
-                    <p>Authentic heritage architecture ideal for pre-wedding shoots, ad films, and creative productions</p>
+        </div>
+        
+        <!-- Auto-scrolling video carousel -->
+        <div class="video-carousel">
+            <div class="video-track">
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏛️</div>
-                    <h3>Traditional Architecture</h3>
-                    <p>Original wooden pillars, carved doors, and traditional chowk courtyard</p>
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🌄</div>
-                    <h3>Scenic Location</h3>
-                    <p>Located near Sinhagad Fort with beautiful rural surroundings</p>
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎬</div>
-                    <h3>Versatile Spaces</h3>
-                    <p>Multiple shooting locations within the property for diverse scenes</p>
+                <div class="video-item video-item-rotate">
+                    <video preload="metadata" loop muted playsinline class="tap-to-play" loading="lazy">
+                        <source src="videos/testimonial-4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Duplicate for seamless loop -->
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-item video-item-rotate">
+                    <video preload="metadata" loop muted playsinline class="tap-to-play" loading="lazy">
+                        <source src="videos/testimonial-4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-item">
+                    <video controls preload="metadata" loading="lazy">
+                        <source src="videos/testimonial-5.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </div>
@@ -128,27 +182,27 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/gallery-1.jpg" alt="Traditional Courtyard">
+                    <img src="images/gallery-1.jpg" alt="Traditional Courtyard" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Traditional Courtyard</span>
+                      
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-2.jpg" alt="Wooden Architecture">
+                    <img src="images/gallery-2.jpg" alt="Wooden Architecture" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Wooden Architecture</span>
+                        
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-3.jpg" alt="Pre-Wedding Shoot">
+                    <img src="images/gallery-3.jpg" alt="Pre-Wedding Shoot" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Pre-Wedding Shoot</span>
+                        
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="images/gallery-4.jpg" alt="Rural Surroundings">
+                    <img src="images/gallery-4.jpg" alt="Rural Surroundings" loading="lazy">
                     <div class="gallery-overlay">
-                        <span>Rural Surroundings</span>
+                       
                     </div>
                 </div>
             </div>
@@ -204,3 +258,5 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+
+

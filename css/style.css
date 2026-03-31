@@ -405,6 +405,28 @@ p {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* Header Logo Image */
+.header-logo-img {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    transition: var(--transition);
+}
+
+.header-logo-img img {
+    height: 60px;
+    width: auto;
+    transition: var(--transition);
+}
+
+.header.scrolled .header-logo-img img {
+    height: 50px;
+}
+
+.header-logo-img:hover {
+    opacity: 0.8;
+}
+
 
 /* Hero Section */
 .hero {
@@ -436,6 +458,13 @@ p {
 }
 
 .hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-slide video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -493,6 +522,10 @@ p {
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1.2;
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--maratha-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-subtitle {
@@ -775,16 +808,15 @@ p {
 }
 
 
-/* Gallery Preview & Main */
-.gallery-grid,
-.gallery-masonry {
+/* Gallery Preview (index page) */
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
 }
 
-.gallery-item {
+.gallery-grid .gallery-item {
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -793,77 +825,112 @@ p {
     transition: var(--transition);
 }
 
-.gallery-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 3px solid var(--saffron);
-    opacity: 0;
-    transform: scale(0.95);
-    transition: var(--transition);
-    z-index: 2;
-    pointer-events: none;
-}
-
-.gallery-item:hover::before {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.gallery-item:hover {
-    border-color: var(--saffron);
-    box-shadow: var(--shadow-saffron);
-}
-
-.gallery-item img {
+.gallery-grid .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    filter: grayscale(0.2);
 }
 
-.gallery-item:hover img {
+.gallery-grid .gallery-item:hover img {
     transform: scale(1.08);
-    filter: grayscale(0);
 }
 
-.gallery-overlay {
+.gallery-grid .gallery-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: var(--spacing-md);
-    background: linear-gradient(to top, 
-        rgba(28, 20, 16, 0.95) 0%, 
-        rgba(28, 20, 16, 0.7) 50%,
-        transparent 100%);
+    background: linear-gradient(to top, rgba(28,20,16,0.9) 0%, transparent 100%);
     color: var(--text-light);
-    transform: translateY(calc(100% - 60px));
-    transition: var(--transition);
 }
 
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-.gallery-overlay span {
-    font-size: 1.125rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, var(--saffron) 0%, var(--maratha-gold) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-transform: uppercase;
+.gallery-grid .gallery-overlay span {
+    font-size: 1rem;
     font-family: var(--font-primary);
-    position: relative;
-    padding-left: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--saffron);
 }
 
+/* ── Mosaic Gallery (gallery page) ── */
+.gallery-main {
+    padding: 60px 0 0 0;
+}
+
+.mosaic-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mosaic-row {
+    display: flex;
+    gap: 4px;
+    height: 340px;
+}
+
+.mosaic-item {
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+.mosaic-item.mosaic-large {
+    flex: 2;
+}
+
+.mosaic-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mosaic-stack .mosaic-item {
+    flex: 1;
+}
+
+.mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.mosaic-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mosaic-item:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .mosaic-row {
+        flex-direction: column;
+        height: auto;
+    }
+    .mosaic-item,
+    .mosaic-item.mosaic-large {
+        height: 220px;
+        flex: none;
+    }
+    .mosaic-stack {
+        flex-direction: column;
+    }
+    .mosaic-stack .mosaic-item {
+        height: 220px;
+    }
+}
+
+/* legacy — keep for any leftover references */
 .gallery-overlay span::before {
     content: '◆';
     position: absolute;
@@ -1221,6 +1288,80 @@ p {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 0.875rem;
+}
+
+/* Video Testimonials Carousel */
+.testimonials-video {
+    padding-bottom: var(--spacing-xxl);
+    overflow: hidden;
+}
+
+.video-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: var(--spacing-xl);
+}
+
+.video-track {
+    display: flex;
+    gap: 20px;
+    animation: scroll-left 40s linear infinite;
+    width: fit-content;
+}
+
+.video-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.video-item {
+    flex-shrink: 0;
+    width: 400px;
+    height: 300px;
+    border: 3px solid var(--saffron);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    background-color: #000;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-saffron);
+    border-color: var(--maratha-gold);
+}
+
+.video-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.video-item-rotate video {
+    transform: rotate(90deg) scale(1.33);
+    transform-origin: center center;
+}
+
+@media (max-width: 768px) {
+    .video-item {
+        width: 300px;
+        height: 225px;
+    }
+    
+    .video-track {
+        animation-duration: 30s;
+    }
 }
 
 /* Facilities Section */
@@ -1804,6 +1945,19 @@ p {
     .nav-menu a {
         font-size: 1rem;
         padding: var(--spacing-sm) 0;
+    }
+    
+    .header-logo-img {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+    
+    .header-logo-img img {
+        height: 45px;
+    }
+    
+    .header.scrolled .header-logo-img img {
+        height: 40px;
     }
     
     .menu-toggle {

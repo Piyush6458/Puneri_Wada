@@ -175,3 +175,19 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach(el => {
     revealObserver.observe(el);
 });
+
+// Tap to Play for Testimonial Video 4
+const tapToPlayVideos = document.querySelectorAll('.tap-to-play');
+
+tapToPlayVideos.forEach(video => {
+    video.addEventListener('click', function() {
+        if (this.paused) {
+            this.play();
+        } else {
+            this.pause();
+        }
+    });
+    
+    // Add visual indicator
+    video.style.cursor = 'pointer';
+});
