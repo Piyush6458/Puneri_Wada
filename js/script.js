@@ -1,4 +1,4 @@
-// Puneri Wada - Main JavaScript
+// Devran Wada - Main JavaScript
 
 // Mobile Menu Toggle
 const menuToggle = document.getElementById('menuToggle');
