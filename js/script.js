@@ -189,3 +189,22 @@ tapToPlayVideos.forEach(video => {
     // Add visual indicator
     video.style.cursor = 'pointer';
 });
+
+// Rotate video when playing (for video-item-rotate)
+const rotatedVideos = document.querySelectorAll('.video-item-rotate video');
+
+rotatedVideos.forEach(video => {
+    // Add 'playing' class when video starts playing
+    video.addEventListener('play', function() {
+        this.classList.add('playing');
+    });
+    
+    // Remove 'playing' class when video is paused or ended
+    video.addEventListener('pause', function() {
+        this.classList.remove('playing');
+    });
+    
+    video.addEventListener('ended', function() {
+        this.classList.remove('playing');
+    });
+});

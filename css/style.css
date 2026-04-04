@@ -1350,8 +1350,14 @@ p {
 }
 
 .video-item-rotate video {
-    transform: rotate(90deg) scale(1.33);
+    transform: none;
     transform-origin: center center;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate video only when playing */
+.video-item-rotate video.playing {
+    transform: rotate(90deg) scale(1.33);
 }
 
 @media (max-width: 768px) {
