@@ -639,6 +639,7 @@ p {
     z-index: 2;
     width: 90%;
     max-width: 800px;
+    display: none; /* Hide page header text - only show image */
 }
 
 .page-header-content h1 {
@@ -1574,11 +1575,27 @@ p {
 .contact-info-section h2 {
     font-family: var(--font-primary);
     font-size: 2rem;
-    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--maratha-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: var(--spacing-lg);
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 400;
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.contact-form-section h2::after,
+.contact-info-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--saffron), var(--maratha-gold));
 }
 
 .contact-form {
@@ -1599,26 +1616,60 @@ p {
     font-size: 0.875rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    font-family: var(--font-secondary);
+    display: block;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    padding: 14px 16px;
-    border: 1px solid var(--border-color);
-    border-radius: 0;
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #E5DDD5;
+    border-radius: 4px;
     font-family: var(--font-secondary);
     font-size: 1rem;
-    transition: var(--transition-fast);
+    transition: all 0.3s ease;
     background-color: #FFFFFF;
+    color: var(--text-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+    opacity: 0.7;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(139, 105, 20, 0.1);
+    border-color: var(--saffron);
+    box-shadow: 0 0 0 4px rgba(255, 153, 51, 0.1), 0 4px 8px rgba(0, 0, 0, 0.08);
+    background-color: #FFF8E7;
+    transform: translateY(-1px);
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: var(--maratha-gold);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23D97706' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 45px;
 }
 
 .contact-details {
@@ -1668,6 +1719,34 @@ p {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-weight: 400;
+}
+
+.map-container {
+    border: 3px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.map-container:hover {
+    border-color: var(--saffron);
+    box-shadow: var(--shadow-saffron);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+}
+
+.map-note {
+    background: linear-gradient(135deg, rgba(255, 153, 51, 0.05) 0%, rgba(201, 169, 97, 0.05) 100%);
+    padding: var(--spacing-sm);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin: 0;
+    border-top: 2px solid var(--border-color);
 }
 
 .map-placeholder {
@@ -2326,4 +2405,80 @@ p {
 
 .maratha-card:hover::before {
     opacity: 0.4;
+}
+
+
+/* ── Floating Contact Buttons ── */
+.floating-contact-buttons {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.floating-btn svg {
+    width: 30px;
+    height: 30px;
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+}
+
+.email-btn {
+    background: linear-gradient(135deg, var(--saffron) 0%, var(--deep-saffron) 100%);
+    color: white;
+}
+
+.email-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(255, 153, 51, 0.5);
+}
+
+.instagram-btn {
+    background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    color: white;
+}
+
+.instagram-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(225, 48, 108, 0.5);
+}
+
+@media (max-width: 768px) {
+    .floating-contact-buttons {
+        right: 20px;
+        bottom: 20px;
+    }
+    
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .floating-btn svg {
+        width: 25px;
+        height: 25px;
+    }
 }

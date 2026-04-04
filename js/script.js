@@ -104,23 +104,21 @@ if (filterButtons.length > 0) {
     });
 }
 
-// Contact Form Handling
+// Contact Form Handling (Formspree)
 const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('form-status');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    contactForm.addEventListener('submit', function(e) {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
         
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
         
-        // Here you would typically send the data to a server
-        // For now, we'll just show an alert
-        alert('Thank you for your inquiry! We will get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
+        // Form will submit to Formspree
+        // After submission, Formspree will redirect or show confirmation
     });
 }
 
